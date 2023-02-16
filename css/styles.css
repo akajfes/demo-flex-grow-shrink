@@ -41,3 +41,23 @@ section:only-child {
     background-color: whitesmoke;
     color: darkslategray;
 }
+
+/*Sections are content width by default (the text and padding inside), but due to that they don't take up all the space on the row.
+Flex grow allows items to grow beyond their content width to take up the extra space.
+Default flex-grow is 0 which means no grow. flex-grow: 1 turns the grow on*/
+
+/*by default all flex items are flex-shrink: 1
+If items cannot shrink, they become the max content width*/
+section {
+    /* flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto; */
+
+    /* flex shorthand: grow shrink basis */
+    flex: 1;
+}
+
+section:nth-child(3) {
+    flex-grow: 4;
+    /* This section then gets four times the remaining amount of space */
+}
